@@ -1,0 +1,771 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"resp",
+				"response.end"
+			],
+			[
+				"wr",
+				"writerz"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"ce",
+				"cellspacing\tAttr"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"ta",
+				"table1"
+			],
+			[
+				"paddi",
+				"padding-left"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"NFDT_F",
+				"NFDT_FenSuo"
+			],
+			[
+				"count",
+				"counts"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"sp",
+				"cellspacing\tAttr"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"vali",
+				"vertical-align"
+			],
+			[
+				"nf",
+				"NFDT_DongTai"
+			],
+			[
+				"na",
+				"NFDT_TianBaoRen"
+			],
+			[
+				"su",
+				"submit"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"NFDT_fen",
+				"NFDT_FenSuoZhiBan"
+			],
+			[
+				"nfdt",
+				"NFDT_1DArenshu"
+			],
+			[
+				"tex",
+				"text-align"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!--#include file=\"config.asp\"-->\n<%\n\nNFDT_SuoZhang=request.form(\"NFDT_SuoZhang\")\nNFDT_ChuShi=request.form(\"NFDT_ChuShi\")\nNFDT_HuWeiDui=request.form(\"NFDT_HuWeiDui\")\nNFDT_YiYuan=request.form(\"NFDT_YiYuan\")\nNFDT_ShuiDianBan=request.form(\"NFDT_ShuiDianBan\")\nNFDT_SiJi=request.form(\"NFDT_SiJi\")\nNFDT_DongTai=replace(request.form(\"NFDT_DongTai\"),vbcrlf,\"<br>\")\ndo while instr(NFDT_DongTai,\"<br><br>\")\n\tNFDT_DongTai=replace(NFDT_DongTai,\"<br><br>\",\"<br>\")\n'\tresponse.write(NFDT_DongTai)\nloop\nif(NFDT_DongTai)=\"<br>\" then\n\tNFDT_DongTai=\"\"\nend if\nSet Lours=server.createobject(\"adodb.recordset\")\nsql=\"update ZS set NFDT_SuoZhang='\"&NFDT_SuoZhang&\"',NFDT_ChuShi='\"&NFDT_ChuShi&\"',NFDT_HuWeiDui='\"&NFDT_HuWeiDui&\"',NFDT_YiYuan='\"&NFDT_YiYuan&\"',NFDT_ShuiDianBan='\"&NFDT_ShuiDianBan&\"',NFDT_SiJi='\"&NFDT_SiJi&\"',NFDT_DongTai='\"&NFDT_DongTai&\"',NFDT_GenXin='\"&now()&\"'\"\n'response.write sql\n'response.end\nLours.Open sql,Louconn,1,3\ncall writerzzs(NFDT_SuoZhang,NFDT_ChuShi,NFDT_HuWeiDui,NFDT_YiYuan,NFDT_ShuiDianBan,NFDT_SiJi,NFDT_DongTai)\nset Lours=nothing\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('信息上报成功');\"&\"window.location.href = 'zhihuizhongxin.asp'\"&\" </script>\" \n%>",
+			"file": "update1.asp",
+			"file_size": 1216,
+			"file_write_time": 131605595287498214,
+			"settings":
+			{
+				"buffer_size": 1185,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/C/Users/lenovo/AppData/Local/Temp/scp13088/volume2/web/phpipam/config.php",
+			"settings":
+			{
+				"buffer_size": 5515,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<%\non error resume next\n\ndim Louconn,connstr,db\ndb=\"NFDT.mdb\" \nSet Louconn = Server.CreateObject(\"ADODB.Connection\")\nconnstr=\"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\" & Server.MapPath(\"\"&db&\"\")\nLouconn.Open connstr\n\nIf Err then\nErr.Clear\nSet Louconn = Nothing\nResponse.Write \"系统调整中......请稍候再试！！\"\nResponse.End\nEnd If\n%>\n<!--#include file=\"func.asp\"-->\n",
+			"file": "config.asp",
+			"file_size": 386,
+			"file_write_time": 131596058632126771,
+			"settings":
+			{
+				"buffer_size": 357,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "css/NFDT.css",
+			"settings":
+			{
+				"buffer_size": 2170,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<script type=\"text/javascript\" language=\"javascript\" src=\"check.js\"></script>\n<div id=\"header\"><div class=\"bimg\" ><img class=\"noprint\" src=\"image/logo.png\" alt=\"<%=Logo_alt%>\" height=\"80\" width=\"80\" margin-bottom:0px;/></div><%\nselect case id\ncase 1\n%>\n<title>广东省南丰强制隔离戒毒所一分所每日动态登记表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所一分所每日动态登记表</div><%\ncase 2\n%>\n<title>广东省南丰强制隔离戒毒所二分所每日动态登记表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所二分所每日动态登记表</div>\n<%\n\ncase 3\n%>\n<title>广东省南丰强制隔离戒毒所三分所每日动态登记表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所三分所每日动态登记表</div>\n<%\ncase 4\n%>\n<title>广东省南丰强制隔离戒毒所四分所每日动态登记表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所四分所每日动态登记表</div>\n<%\ncase 6\n%>\n<title>广东省南丰强制隔离戒毒所每日动态登记表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所每日动态登记表</div>\n<%\ncase 5\n%>\n<title>广东省南丰强制隔离戒毒所指挥中心每日动态表</title>\n<div class=\"biaoti\">广东省南丰强制隔离戒毒所指挥中心每日动态表</div>\n<%\nend select\n%>\n<hr>",
+			"file": "chore.asp",
+			"file_size": 1144,
+			"file_write_time": 131596155036614376,
+			"settings":
+			{
+				"buffer_size": 853,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "<meta http-equiv=\"refresh\" content=\"20\">\n<!--#include file=\"config.asp\"-->\n<link type=\"text/css\" rel=\"stylesheet\" href=\"css/NFDT1.css\"/> \n<head>\n<link rel=\"shortcut icon\" href=\"image/nf.ico\">\n</head>\n<div class=\"main\">\n<%\ncall writerz(\"111\")\nset rs1=server.createobject(\"adodb.recordset\")\nstr = (\"select * from ZS\")\t\t\t'查询所有记录\nrs1.Open str,Louconn,1,1\ndim zbsz,zbcs,hwd,yy,dt,sj\n\t\tzbsz=rs1(\"NFDT_SuoZhang\")\n\t\tzbcs=rs1(\"NFDT_ChuShi\")\n\t\thwd=rs1(\"NFDT_HuWeiDui\")\n\t\tyy=rs1(\"NFDT_YiYuan\")\n\t\tsdb=rs1(\"NFDT_ShuiDianBan\")\n\t\tsji=rs1(\"NFDT_SiJi\")\n\t\tdt=rs1(\"NFDT_DongTai\")\n\t\tsj=formatdatetime(rs1(\"NFDT_GenXin\"),2)\nrs1.Close\nset rs1=nothing\n%>\n<%\nset rs=server.createobject(\"adodb.recordset\")\nsqlcmd = (\"select * from NFDT\")\t\t\t'查询所有记录\nrs.Open sqlcmd,Louconn,1,1\na=0\ndim Count_Rs(4),Count_Wz(4),Count_Gz(4),Count_Dd(4),Count_Mj(4)\ndo while not rs.eof\n%>\n\t\t<%Count_Rs(a)=rs(\"NFDT_1DArenshu\")+rs(\"NFDT_2DArenshu\")+rs(\"NFDT_3DArenshu\")+rs(\"NFDT_4DArenshu\")%>\n\t\t<%Count_Wz(a)=rs(\"NFDT_1DaWeiZhong\")+rs(\"NFDT_2DaWeiZhong\")+rs(\"NFDT_3DaWeiZhong\")+rs(\"NFDT_4DaWeiZhong\")%>\n\t\t<%Count_Gz(a)=rs(\"NFDT_1DaGuangZhou\")+rs(\"NFDT_2DaGuangZhou\")+rs(\"NFDT_3DaGuangZhou\")+rs(\"NFDT_4DaGuangZhou\")%>\n\t\t<%Count_Dd(a)=rs(\"NFDT_1DaDanDu\")+rs(\"NFDT_2DaDanDu\")+rs(\"NFDT_3DaDanDu\")+rs(\"NFDT_4DaDanDu\")%>\n\t\t<%Count_Mj(a)=rs(\"NFDT_1DaMinJing\")+rs(\"NFDT_2DaMinJing\")+rs(\"NFDT_3DaMinJing\")+rs(\"NFDT_4DaMinJing\")%>\n<%\na=a+1\nrs.movenext\nloop\nrs.Close\nset rs=nothing\n%>\n\n<%\nset Lours=server.createobject(\"adodb.recordset\")\nid=6\n'分所表格数量'\ndim counts\n%>\n<!--#include file=\"chore.asp\"-->\n<div id=\"count\">全所总人数：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Rs)\ndim count_rs1\ncount_rs1=Cint(Count_Rs1)+Cint(Count_Rs(i))\nnext\nresponse.write(count_rs1)\n%>人</span>\n危重人员：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Wz)\ndim count_wz1\ncount_wz1=Cint(Count_wz1)+Cint(Count_wz(i))\nnext\nresponse.write(count_wz1)\n%>人</span>\n单独管理：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Dd)\ndim count_dd1\ncount_dd1=Cint(Count_dd1)+Cint(Count_dd(i))\nnext\nresponse.write(count_dd1)\n%>人</span>\n所外留医：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Gz)\ndim count_gz1\ncount_gz1=Cint(Count_gz1)+Cint(Count_gz(i))\nnext\nresponse.write(count_gz1)\n%>人</span>\n在队民警：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Mj)\ndim count_mj1\ncount_mj1=Cint(Count_mj1)+Cint(Count_mj(i))\nnext\nresponse.write(count_mj1)\n%>人</span>\n<span class=\"noprint\"><input type=\"button\" id=\"printbutton\" name=\"printbutton\" onclick=\"javascript:window.print()\" value=\"打印\" height=\"50\"></span>\n</div>\n<%\nLours.Open sqlcmd,Louconn,1,1\ncounts=Lours.recordcount\n'response.write(counts)\ndim Fbiaoti \n%>\n\t\t<table cellpadding=\"0\" cellspacing=\"0\" border=\"2\">\n\t\t<tr><th rowspan=\"2\"><span id=\"timeL\"><%=day(now())%></span>日</th><th>所长值班</th><td><span class=\"zszbz\"><%=dantian(zbsz,sj)%></span></td><th>处室值班</th><td colspan=\"2\"><span class=\"zszbz\"><%=dantian(zbcs,sj)%></span></td><th>医院值班</th><td><span class=\"zszbz\"><%=dantian(yy,sj)%></span></td></tr>\n\t\t<tr><th>护卫队值班</th><td><span class=\"zszbz\"><%=dantian(hwd,sj)%></span></td><th>司机</th><td colspan=\"2\"><span class=\"zszbz\"><%=dantian(sji,sj)%></span></td><th>水电班</th><td><span class=\"zszbz\"><%=dantian(sdb,sj)%></span></td></tr>\n\t\t<tr><th>单位</th><th>大队</th><th>人数</th><th>危重人员</th><th>单独管理</th><th>所外留医</th><th>值班领导</th><th>在队民警</th></tr>\n<%\ndo while not Lours.eof\n%> \n\t\t<%\n\t\t\tselect case Lours(\"NFDT_FenSuo\")\n\t\t\tcase 1\n\t\t\tFbiaoti=\"一分所\"\n\t\t\tcase 2\n\t\t\tFbiaoti=\"二分所\"\n\t\t\tcase 3\n\t\t\tFbiaoti=\"三分所\"\n\t\t\tcase 4\n\t\t\tFbiaoti=\"四分所\"\n\t\t\tend select\n\t\t%>\n\n\t\t<tr><td rowspan=\"6\"><%=Fbiaoti%></td>\n\t\t<td>一大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_1DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>二大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_2DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_2DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_2DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>三大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_3DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_3DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_3DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>\n\t\t<%\n\t\tif(Lours(\"NFDT_FenSuo\")=4) then\n\t\t\tresponse.write(\"留医中队\")\n\t\telse\n\t\t\tresponse.write(\"四大\")\n\t\tend if\n\t\t%>\n\t\t</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_4DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_4DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_4DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>分所机关</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DArenshu\")+Lours(\"NFDT_2DArenshu\")+Lours(\"NFDT_3DArenshu\")+Lours(\"NFDT_4DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaWeiZhong\")+Lours(\"NFDT_2DaWeiZhong\")+Lours(\"NFDT_3DaWeiZhong\")+Lours(\"NFDT_4DaWeiZhong\")%></span></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaDanDu\")+Lours(\"NFDT_2DaDanDu\")+Lours(\"NFDT_3DaDanDu\")+Lours(\"NFDT_4DaDanDu\")%></span></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaGuangZhou\")+Lours(\"NFDT_2DaGuangZhou\")+Lours(\"NFDT_3DaGuangZhou\")+Lours(\"NFDT_4DaGuangZhou\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_FenSuoZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaMinJing\")+Lours(\"NFDT_2DaMinJing\")+Lours(\"NFDT_3DaMinJing\")+Lours(\"NFDT_4DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td colspan=\"7\">\n\t\t<span class=\"baogaoren\">最后报告时间：<%=formatdatetime(Lours(\"NFDT_GenXin\"),1)%><%=formatdatetime(Lours(\"NFDT_GenXin\"),4)%>&nbsp;&nbsp;报告人：<%=Lours(\"NFDT_BaoGaoRen\")%></span></td></tr>\n\t\t<!--div class=\"lastupdate\"><%=Fbiaoti%>最后上报时间：<%=Lours(\"NFDT_GenXin\")%><span class=\"baogaoren\">报告人：<%=Lours(\"NFDT_BaoGaoRen\")%></span></div-->\n\n<%\na=a+1\nLours.movenext\nloop\n%>\n\t\t<tr>\n\t\t\t<td>当日动态</td>\n\t\t\t<td colspan=\"7\" class=\"dt\"><%=dt%></td>\n\t\t</tr>\n\t\t</table>\n\n<hr>\n\n<%\nLours.Close \nLouconn.Close\nset Lours=nothing\nset Louconn=nothing\n%>\n<!--#include file=\"footer.asp\"-->\n</div>",
+			"file": "index.asp",
+			"file_size": 7489,
+			"file_write_time": 131612287125652138,
+			"settings":
+			{
+				"buffer_size": 7134,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "<meta http-equiv=\"refresh\" content=\"20\">\n<!--#include file=\"config.asp\"-->\n<link type=\"text/css\" rel=\"stylesheet\" href=\"css/NFDT1.css\"/> \n<head>\n<link rel=\"shortcut icon\" href=\"image/nf.ico\">\n</head>\n<div class=\"main\">\n<%\ncall writerz(\"111\")\nset rs1=server.createobject(\"adodb.recordset\")\nstr = (\"select * from ZS\")\t\t\t'查询所有记录\nrs1.Open str,Louconn,1,1\ndim zbsz,zbcs,hwd,yy,dt,sj\n\t\tzbsz=rs1(\"NFDT_SuoZhang\")\n\t\tzbcs=rs1(\"NFDT_ChuShi\")\n\t\thwd=rs1(\"NFDT_HuWeiDui\")\n\t\tyy=rs1(\"NFDT_YiYuan\")\n\t\tsdb=rs1(\"NFDT_ShuiDianBan\")\n\t\tsji=rs1(\"NFDT_SiJi\")\n\t\tdt=rs1(\"NFDT_DongTai\")\n\t\tsj=formatdatetime(rs1(\"NFDT_GenXin\"),2)\nrs1.Close\nset rs1=nothing\n%>\n<%\nset rs=server.createobject(\"adodb.recordset\")\nsqlcmd = (\"select * from NFDT\")\t\t\t'查询所有记录\nrs.Open sqlcmd,Louconn,1,1\na=0\ndim Count_Rs(4),Count_Wz(4),Count_Gz(4),Count_Dd(4),Count_Mj(4)\ndo while not rs.eof\n%>\n\t\t<%Count_Rs(a)=rs(\"NFDT_1DArenshu\")+rs(\"NFDT_2DArenshu\")+rs(\"NFDT_3DArenshu\")+rs(\"NFDT_4DArenshu\")%>\n\t\t<%Count_Wz(a)=rs(\"NFDT_1DaWeiZhong\")+rs(\"NFDT_2DaWeiZhong\")+rs(\"NFDT_3DaWeiZhong\")+rs(\"NFDT_4DaWeiZhong\")%>\n\t\t<%Count_Gz(a)=rs(\"NFDT_1DaGuangZhou\")+rs(\"NFDT_2DaGuangZhou\")+rs(\"NFDT_3DaGuangZhou\")+rs(\"NFDT_4DaGuangZhou\")%>\n\t\t<%Count_Dd(a)=rs(\"NFDT_1DaDanDu\")+rs(\"NFDT_2DaDanDu\")+rs(\"NFDT_3DaDanDu\")+rs(\"NFDT_4DaDanDu\")%>\n\t\t<%Count_Mj(a)=rs(\"NFDT_1DaMinJing\")+rs(\"NFDT_2DaMinJing\")+rs(\"NFDT_3DaMinJing\")+rs(\"NFDT_4DaMinJing\")%>\n<%\na=a+1\nrs.movenext\nloop\nrs.Close\nset rs=nothing\n%>\n\n<%\nset Lours=server.createobject(\"adodb.recordset\")\nid=6\n'分所表格数量'\ndim counts\n%>\n<!--#include file=\"chore.asp\"-->\n<div id=\"count\">全所总人数：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Rs)\ndim count_rs1\ncount_rs1=Cint(Count_Rs1)+Cint(Count_Rs(i))\nnext\nresponse.write(count_rs1)\n%>人</span>\n危重人员：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Wz)\ndim count_wz1\ncount_wz1=Cint(Count_wz1)+Cint(Count_wz(i))\nnext\nresponse.write(count_wz1)\n%>人</span>\n单独管理：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Dd)\ndim count_dd1\ncount_dd1=Cint(Count_dd1)+Cint(Count_dd(i))\nnext\nresponse.write(count_dd1)\n%>人</span>\n所外留医：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Gz)\ndim count_gz1\ncount_gz1=Cint(Count_gz1)+Cint(Count_gz(i))\nnext\nresponse.write(count_gz1)\n%>人</span>\n在队民警：<span class=\"zong\">\n<%\nfor i=0 to ubound(Count_Mj)\ndim count_mj1\ncount_mj1=Cint(Count_mj1)+Cint(Count_mj(i))\nnext\nresponse.write(count_mj1)\n%>人</span>\n<span class=\"noprint\"><input type=\"button\" id=\"printbutton\" name=\"printbutton\" onclick=\"javascript:window.print()\" value=\"打印\" height=\"50\"></span>\n</div>\n<%\nLours.Open sqlcmd,Louconn,1,1\ncounts=Lours.recordcount\n'response.write(counts)\ndim Fbiaoti \n%>\n\t\t<table cellpadding=\"0\" cellspacing=\"0\" border=\"2\">\n\t\t<tr><th rowspan=\"2\"><span id=\"timeL\"><%=day(now())%></span>日</th><th>所长值班</th><td><span class=\"zszbz\"><%=dantian(zbsz,sj)%></span></td><th>处室值班</th><td colspan=\"2\"><span class=\"zszbz\"><%=dantian(zbcs,sj)%></span></td><th>医院值班</th><td><span class=\"zszbz\"><%=dantian(yy,sj)%></span></td></tr>\n\t\t<tr><th>护卫队值班</th><td><span class=\"zszbz\"><%=dantian(hwd,sj)%></span></td><th>司机值班</th><td colspan=\"2\"><span class=\"zszbz\"><%=dantian(sji,sj)%></span></td><th>水电班值班</th><td><span class=\"zszbz\"><%=dantian(sdb,sj)%></span></td></tr>\n\t\t<tr><th>单位</th><th>大队</th><th>人数</th><th>危重人员</th><th>单独管理</th><th>所外留医</th><th>值班领导</th><th>在队民警</th></tr>\n<%\ndo while not Lours.eof\n%> \n\t\t<%\n\t\t\tselect case Lours(\"NFDT_FenSuo\")\n\t\t\tcase 1\n\t\t\tFbiaoti=\"一分所\"\n\t\t\tcase 2\n\t\t\tFbiaoti=\"二分所\"\n\t\t\tcase 3\n\t\t\tFbiaoti=\"三分所\"\n\t\t\tcase 4\n\t\t\tFbiaoti=\"四分所\"\n\t\t\tend select\n\t\t%>\n\n\t\t<tr><td rowspan=\"6\"><%=Fbiaoti%></td>\n\t\t<td>一大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_1DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_1DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>二大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_2DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_2DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_2DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_2DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>三大队</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_3DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_3DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_3DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_3DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>\n\t\t<%\n\t\tif(Lours(\"NFDT_FenSuo\")=4) then\n\t\t\tresponse.write(\"留医中队\")\n\t\telse\n\t\t\tresponse.write(\"四大\")\n\t\tend if\n\t\t%>\n\t\t</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_4DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaWeiZhong\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaDanDu\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=ChangeFontColor(Lours(\"NFDT_4DaGuangZhou\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_4DaZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_4DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td>分所机关</td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DArenshu\")+Lours(\"NFDT_2DArenshu\")+Lours(\"NFDT_3DArenshu\")+Lours(\"NFDT_4DArenshu\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaWeiZhong\")+Lours(\"NFDT_2DaWeiZhong\")+Lours(\"NFDT_3DaWeiZhong\")+Lours(\"NFDT_4DaWeiZhong\")%></span></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaDanDu\")+Lours(\"NFDT_2DaDanDu\")+Lours(\"NFDT_3DaDanDu\")+Lours(\"NFDT_4DaDanDu\")%></span></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaGuangZhou\")+Lours(\"NFDT_2DaGuangZhou\")+Lours(\"NFDT_3DaGuangZhou\")+Lours(\"NFDT_4DaGuangZhou\")%></span></td>\n\t\t<td><span class=\"shujv\"><%=dantian(Lours(\"NFDT_FenSuoZhiBan\"),Lours(\"NFDT_GenXin\"))%></span></td>\n\t\t<td><span class=\"shujv\"><%=Lours(\"NFDT_1DaMinJing\")+Lours(\"NFDT_2DaMinJing\")+Lours(\"NFDT_3DaMinJing\")+Lours(\"NFDT_4DaMinJing\")%></span></td>\n\t\t</tr>\n\t\t<tr>\n\t\t<td colspan=\"7\">\n\t\t<span class=\"baogaoren\">最后报告时间：<%=formatdatetime(Lours(\"NFDT_GenXin\"),1)%><%=formatdatetime(Lours(\"NFDT_GenXin\"),4)%>&nbsp;&nbsp;报告人：<%=Lours(\"NFDT_BaoGaoRen\")%></span></td></tr>\n\t\t<!--div class=\"lastupdate\"><%=Fbiaoti%>最后上报时间：<%=Lours(\"NFDT_GenXin\")%><span class=\"baogaoren\">报告人：<%=Lours(\"NFDT_BaoGaoRen\")%></span></div-->\n\n<%\na=a+1\nLours.movenext\nloop\n%>\n\t\t<tr>\n\t\t\t<td>当日动态</td>\n\t\t\t<td colspan=\"7\" class=\"dt\"><%=dt%></td>\n\t\t</tr>\n\t\t</table>\n\n<hr>\n\n<%\nLours.Close \nLouconn.Close\nset Lours=nothing\nset Louconn=nothing\n%>\n<!--#include file=\"footer.asp\"-->\n</div>",
+			"file": "zs1.asp",
+			"file_size": 7497,
+			"file_write_time": 131612301565118028,
+			"settings":
+			{
+				"buffer_size": 7138,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "<!--#include file=\"config.asp\"-->\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/NFDT.css\">\n<%\nset rs1=server.createobject(\"adodb.recordset\")\nstr = (\"select * from ZS\")\t\t\t'查询所级值班记录\nrs1.Open str,Louconn,1,1\ndim zbsz,zbcs,hwd,yy,dt,sj\n\t\tzbsz=rs1(\"NFDT_SuoZhang\")\n\t\tzbcs=rs1(\"NFDT_ChuShi\")\n\t\thwd=rs1(\"NFDT_HuWeiDui\")\n\t\tyy=rs1(\"NFDT_YiYuan\")\n\t\tsdb=rs1(\"NFDT_ShuiDianBan\")\n\t\tsji=rs1(\"NFDT_SiJi\")\n\t\tdt=rs1(\"NFDT_DongTai\")\n\t\tsj=formatdatetime(rs1(\"NFDT_GenXin\"),2)\nrs1.Close\nset rs1=nothing\n%>\n<%\nset Lours=server.createobject(\"adodb.recordset\")\nid=4\nsqlcmd = (\"select  * from NFDT where NFDT_FenSuo=\"&id)\t\t\t'查询id(ID号)这条记录\nLours.Open sqlcmd,Louconn,1,1\n%> \n<div class=\"main\">\n<!--#include file=\"chore.asp\"-->\n<table>\t\t\n\t<tr><td rowspan=\"2\">时间</td><td rowspan=\"2\"><span class=\"zszbzf\"><%=sj%></span></td><td>所长</td><td><span class=\"zszbzf\"><%=zbsz%></span></td><td>处室</td><td colspan=\"3\"><span class=\"zszbzf\"><%=zbcs%></span></td><td>医院</td><td><span class=\"zszbzf\"><%=yy%></span></td></tr>\n\t<tr><td>护卫队</td><td><span class=\"zszbzf\"><%=hwd%></span></td><td>司机</td><td colspan=\"3\"><span class=\"zszbzf\"><%=sji%></span></td><td>水电班</td><td><span class=\"zszbzf\"><%=sdb%></span></td></tr>\n</table>\n</table><table cellspacing=\"5\" cellpadding=\"5\" id=\"table1\">\n<form name=\"form1\" method=\"POST\" action=\"update.asp?id=<%=Lours(\"id\")%>\">\n<tr><th>分所单位</th><th>人数</th><th>危重人员</th><th>单独管理</th><th>所外留医</th><th>值班领导</th><th>在队民警</th></tr>\n<tr> \n<td>一大队</td>\n<td><input type=\"text\" id=\"NFDT_1DArenshu\" name=\"NFDT_1DArenshu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_1DArenshu\")%>\" ></td>\n<td><input type=\"text\" id=\"NFDT_1DaWeiZhong\" name=\"NFDT_1DaWeiZhong\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_1DaWeiZhong\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_1DaDanDu\" name=\"NFDT_1DaDanDu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_1DaDanDu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_1DaGuangZhou\" name=\"NFDT_1DaGuangZhou\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_1DaGuangZhou\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_1DaZhiBan\" name=\"NFDT_1DaZhiBan\" class=\"button1\" value=\"<%=Lours(\"NFDT_1DaZhiBan\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_1DaMinJing\" name=\"NFDT_1DaMinJing\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_1DaMinJing\")%>\"></td>\n\n</tr>\n<tr> \n<td>二大队</td>\n<td><input type=\"text\" id=\"NFDT_2DArenshu\" name=\"NFDT_2DArenshu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_2DArenshu\")%>\"></td>\n<td><input id=\"NFDT_2DaWeiZhong\" name=\"NFDT_2DaWeiZhong\" maxlength=\"100\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_2DaWeiZhong\")%>\"></td>\n<td><input id=\"NFDT_2DaDanDu\" name=\"NFDT_2DaDanDu\" maxlength=\"100\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_2DaDanDu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_2DaGuangZhou\" name=\"NFDT_2DaGuangZhou\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_2DaGuangZhou\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_2DaZhiBan\" name=\"NFDT_2DaZhiBan\" class=\"button1\" value=\"<%=Lours(\"NFDT_2DaZhiBan\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_2DaMinJing\" name=\"NFDT_2DaMinJing\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_2DaMinJing\")%>\"></td>\n\n</tr>\n<tr> \n<td>三大队</td>\n<td><input type=\"text\" id=\"NFDT_3DArenshu\" name=\"NFDT_3DArenshu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_3DArenshu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_3DaWeiZhong\" name=\"NFDT_3DaWeiZhong\" maxlength=\"30\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_3DaWeiZhong\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_3DaDanDu\" name=\"NFDT_3DaDanDu\" maxlength=\"30\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_3DaDanDu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_3DaGuangZhou\" name=\"NFDT_3DaGuangZhou\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_3DaGuangZhou\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_3DaZhiBan\" name=\"NFDT_3DaZhiBan\" class=\"button1\" value=\"<%=Lours(\"NFDT_3DaZhiBan\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_3DaMinJing\" name=\"NFDT_3DaMinJing\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_3DaMinJing\")%>\"></td>\n\n</tr>\n<tr> \n<td>\n<%\nif(id=4) then\nresponse.write(\"留医中队\")\nelse\nresponse.write(\"四大队\")\nend if\n%></td>\n<td><input type=\"text\" id=\"NFDT_4DArenshu\" name=\"NFDT_4DArenshu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_4DArenshu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_4DaWeiZhong\" name=\"NFDT_4DaWeiZhong\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_4DaWeiZhong\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_4DaDanDu\" name=\"NFDT_4DaDanDu\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_4DaDanDu\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_4DaGuangZhou\" name=\"NFDT_4DaGuangZhou\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_4DaGuangZhou\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_4DaZhiBan\" name=\"NFDT_4DaZhiBan\" class=\"button1\" value=\"<%=Lours(\"NFDT_4DaZhiBan\")%>\"></td>\n<td><input type=\"text\" id=\"NFDT_4DaMinJing\" name=\"NFDT_4DaMinJing\" class=\"button1\" onkeyup=\"value=value.replace(/[^\\d]/g,'')\" value=\"<%=Lours(\"NFDT_4DaMinJing\")%>\"></td>\n</tr>\n<tr>\n<td>当日动态</td>\n<td colspan=\"6\">\n<textarea id=\"textare\" name=\"NFDT_DongTai\"><%=replace(Lours(\"NFDT_DongTai\"),\"<br>\",vbcrlf)%>\n</textarea><br><div class=\"sili\">填写示例：8:00，X大队送XX名学员到广州武警医院看病。</div>\n</td>\n</tr>\n<tr> \n<td>分所值班</td>\n<td > \n<input type=\"text\" id=\"NFDT_FenSuoZhiBan\" name=\"NFDT_FenSuoZhiBan\" class=\"button2\" value=\"<%=Lours(\"NFDT_FenSuoZhiBan\")%>\">\n</td>\n<td colspan=\"5\"><span id=\"countrs\">总人数:<font color=\"blue\"><%=Lours(\"NFDT_1DArenshu\")+Lours(\"NFDT_2DArenshu\")+Lours(\"NFDT_3DArenshu\")+Lours(\"NFDT_4DArenshu\")%>&nbsp;&nbsp;&nbsp;&nbsp;</font>危重人数:<font color=\"blue\"><%=Lours(\"NFDT_1DaWeiZhong\")+Lours(\"NFDT_2DaWeiZhong\")+Lours(\"NFDT_3DaWeiZhong\")+Lours(\"NFDT_4DaWeiZhong\")%>&nbsp;&nbsp;&nbsp;&nbsp;</font>单独管理:<font color=\"blue\"><%=Lours(\"NFDT_1DaDanDu\")+Lours(\"NFDT_2DaDanDu\")+Lours(\"NFDT_3DaDanDu\")+Lours(\"NFDT_4DaDanDu\")%>&nbsp;&nbsp;&nbsp;&nbsp;</font>所外留医:<font color=\"blue\"><%=Lours(\"NFDT_1DaGuangZhou\")+Lours(\"NFDT_2DaGuangZhou\")+Lours(\"NFDT_3DaGuangZhou\")+Lours(\"NFDT_4DaGuangZhou\")%>&nbsp;&nbsp;&nbsp;&nbsp;</font>在队民警:<font color=\"blue\"><%=Lours(\"NFDT_1DaMinJing\")+Lours(\"NFDT_2DaMinJing\")+Lours(\"NFDT_3DaMinJing\")+Lours(\"NFDT_4DaMinJing\")%>&nbsp;&nbsp;&nbsp;&nbsp;</font></span></td>\n</tr>\n<tr> \n<td>报告人</td>\n<td><input type=\"text\" name=\"NFDT_BaoGaoRen\" id=\"NFDT_BaoGaoRen\" class=\"button1\" value=\"<%=Lours(\"NFDT_BaoGaoRen\")%>\" ></td>\n<td colspan=\"4\" ><span class=\"NoUpdate\"><%=NoUpdate(Lours(\"NFDT_GenXin\"))%></span><span class=\"lastupdate\">最后更新时间:<%=FormatDateTime(Lours(\"NFDT_GenXin\"),0)%></span></td><td>　　　　　　　　 \n<input id=\"update\" name=B12 type=\"button\"  onclick=\"sub()\" value=\"上报\">\n<input type=\"hidden\" name=\"id\" value=\"<%=id%>\">\n</td>\n</tr>\n</form>\n</table>\n<br>\n<!--#include file=\"footer.asp\"-->\n\n<br>\n\n<%\nLours.Close \nLouconn.Close\nset Lours=nothing\nset Louconn=nothing\n%>\n</div>",
+			"file": "4fs.asp",
+			"file_size": 7600,
+			"file_write_time": 131612293739780445,
+			"settings":
+			{
+				"buffer_size": 7345,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		},
+		{
+			"file": "css/NFDT1.css",
+			"settings":
+			{
+				"buffer_size": 2924,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!--#include file=\"config.asp\"-->\n<%\ndim IID\nIID=cint(request.form(\"id\"))\n\n'if request(\"LHB_IP\")=\"\" then\n''\tresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('请正确输入IP地址！');\" & \"history.back()\" & \"</script>\" \n''\tResponse.End\n'end if\nNFDT_1DArenshu=request.form(\"NFDT_1DArenshu\")\nNFDT_2DArenshu=request.form(\"NFDT_2DArenshu\")\nNFDT_3DArenshu=request.form(\"NFDT_3DArenshu\")\nNFDT_4DArenshu=request.form(\"NFDT_4DArenshu\")\nNFDT_1DaWeiZhong=request.form(\"NFDT_1DaWeiZhong\")\nNFDT_2DaWeiZhong=request.form(\"NFDT_2DaWeiZhong\")\nNFDT_3DaWeiZhong=request.form(\"NFDT_3DaWeiZhong\")\nNFDT_4DaWeiZhong=request.form(\"NFDT_4DaWeiZhong\")\nNFDT_1DaGuangZhou=request.form(\"NFDT_1DaGuangZhou\")\nNFDT_2DaGuangZhou=request.form(\"NFDT_2DaGuangZhou\")\nNFDT_3DaGuangZhou=request.form(\"NFDT_3DaGuangZhou\")\nNFDT_4DaGuangZhou=request.form(\"NFDT_4DaGuangZhou\")\nNFDT_1DaZhiBan=request.form(\"NFDT_1DaZhiBan\")\nNFDT_2DaZhiBan=request.form(\"NFDT_2DaZhiBan\")\nNFDT_3DaZhiBan=request.form(\"NFDT_3DaZhiBan\")\nNFDT_4DaZhiBan=request.form(\"NFDT_4DaZhiBan\")\nNFDT_1DaDanDu=request.form(\"NFDT_1DaDanDu\")\nNFDT_2DaDanDu=request.form(\"NFDT_2DaDanDu\")\nNFDT_3DaDanDu=request.form(\"NFDT_3DaDanDu\")\nNFDT_4DaDanDu=request.form(\"NFDT_4DaDanDu\")\nNFDT_1DaMinJing=request.form(\"NFDT_1DaMinJing\")\nNFDT_2DaMinJing=request.form(\"NFDT_2DaMinJing\")\nNFDT_3DaMinJing=request.form(\"NFDT_3DaMinJing\")\nNFDT_4DaMinJing=request.form(\"NFDT_4DaMinJing\")\n'response.write(NFDT_1DaDanDu)\nNFDT_FenSuoZhiBan=request.form(\"NFDT_FenSuoZhiBan\")\nNFDT_DongTai=replace(request.form(\"NFDT_DongTai\"),vbcrlf,\"<br>\")\ndo while instr(NFDT_DongTai,\"<br><br>\")\n\tNFDT_DongTai=replace(NFDT_DongTai,\"<br><br>\",\"<br>\")\n'\tresponse.write(NFDT_DongTai)\nloop\nif(NFDT_DongTai)=\"<br>\" then\n\tNFDT_DongTai=\"\"\nend if\nNFDT_BaoGaoRen=request.form(\"NFDT_BaoGaoRen\")\nSet Lours=server.createobject(\"adodb.recordset\")\nsql=\"update NFDT set NFDT_1DArenshu=\"&NFDT_1DArenshu&\",NFDT_2DArenshu=\"&NFDT_2DArenshu&\",NFDT_3DArenshu=\"&NFDT_3DArenshu&\",NFDT_4DArenshu=\"&NFDT_4DArenshu&\",NFDT_1DaWeiZhong=\"&NFDT_1DaWeiZhong&\",NFDT_2DaWeiZhong=\"&NFDT_2DaWeiZhong&\",NFDT_3DaWeiZhong=\"&NFDT_3DaWeiZhong&\",NFDT_4DaWeiZhong=\"&NFDT_4DaWeiZhong&\",NFDT_1DaGuangZhou=\"&NFDT_1DaGuangZhou&\",NFDT_2DaGuangZhou=\"&NFDT_2DaGuangZhou&\",NFDT_3DaGuangZhou=\"&NFDT_3DaGuangZhou&\",NFDT_4DaGuangZhou=\"&NFDT_4DaGuangZhou&\",NFDT_1DaZhiBan='\"&NFDT_1DaZhiBan&\"',NFDT_2DaZhiBan='\"&NFDT_2DaZhiBan&\"',NFDT_3DaZhiBan='\"&NFDT_3DaZhiBan&\"',NFDT_4DaZhiBan='\"&NFDT_4DaZhiBan&\"',NFDT_FenSuoZhiBan='\"&NFDT_FenSuoZhiBan&\"',NFDT_GenXin='\"&now()&\"',NFDT_DongTai='\"&NFDT_DongTai&\"',NFDT_BaoGaoRen='\"&NFDT_BaoGaoRen&\"',NFDT_1DaDanDu=\"&NFDT_1DaDanDu&\",NFDT_2DaDanDu=\"&NFDT_2DaDanDu&\",NFDT_3DaDanDu=\"&NFDT_3DaDanDu&\",NFDT_4DaDanDu=\"&NFDT_4DaDanDu&\",NFDT_1DaMinJing=\"&NFDT_1DaMinJing&\",NFDT_2DaMinJing=\"&NFDT_2DaMinJing&\",NFDT_3DaMinJing=\"&NFDT_3DaMinJing&\",NFDT_4DaMinJing=\"&NFDT_4DaMinJing&\" where NFDT_FenSuo=\"&IID\n'response.write sql\n'response.end\nLours.Open sql,Louconn,1,3\ncall writerz(IID,NFDT_FenSuoZhiBan,NFDT_BaoGaoRen,NFDT_1DaZhiBan,NFDT_2DaZhiBan,NFDT_3DaZhiBan,NFDT_4DaZhiBan,NFDT_1DArenshu,NFDT_2DArenshu,NFDT_3DArenshu,NFDT_4DArenshu,NFDT_1DaWeiZhong,NFDT_2DaWeiZhong,NFDT_3DaWeiZhong,NFDT_4DaWeiZhong,NFDT_1DaGuangZhou,NFDT_2DaGuangZhou,NFDT_3DaGuangZhou,NFDT_4DaGuangZhou,NFDT_1DaDanDu,NFDT_2DaDanDu,NFDT_3DaDanDu,NFDT_4DaDanDu,NFDT_1DaMinJing,NFDT_2DaMinJing,NFDT_3DaMinJing,NFDT_4DaMinJing,NFDT_DongTai)\nselect case (IID)\ncase 1\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('动态信息更新成功');\"&\"window.location.href = '1fs.asp'\"&\" </script>\" \ncase 2\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('动态信息更新成功');\"&\"window.location.href = '2fs.asp'\"&\" </script>\" \ncase 3\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('动态信息更新成功');\"&\"window.location.href = '3fs.asp'\"&\" </script>\" \ncase 4\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('动态信息更新成功');\"&\"window.location.href = '4fs.asp'\"&\" </script>\" \ncase 5\nresponse.write \"<script language=JavaScript>\" & chr(13) & \"alert('动态信息更新成功');\"&\"window.location.href = '5fs.asp'\"&\" </script>\" \nend select\nset Lours=nothing\n%>",
+			"file": "update.asp",
+			"file_size": 4200,
+			"file_write_time": 131602171971338681,
+			"settings":
+			{
+				"buffer_size": 4089,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"last_filter": "Package Control: install",
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Channel→添加资源库链接"
+			],
+			[
+				"in",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"i",
+				"Package Control: Install Package→安装插件"
+			]
+		],
+		"width": 620.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/web/dongtaiguangli",
+		"/E/web/dongtaiguangli/css"
+	],
+	"file_history":
+	[
+		"/E/web/dongtaiguangli/zhihuizhongxin.asp",
+		"/C/Users/lenovo/AppData/Local/Temp/scp08684/usr/share/hassio/homeassistant/automations.yaml",
+		"/E/web/dongtaiguangli/zhihuizhongxin1.asp",
+		"/E/web/dongtaiguangli/4fs.asp",
+		"/E/web/dongtaiguangli/func.asp",
+		"/E/web/dongtaiguangli/update1.asp",
+		"/E/web/dongtaiguangli/check.js",
+		"/C/Users/lenovo/AppData/Local/Temp/scp27025/usr/share/hassio/homeassistant/configuration.yaml",
+		"/E/web/dongtaiguangli/upgrade1.asp",
+		"/E/web/dongtaiguangli/2fs.asp",
+		"/E/web/dongtaiguangli/upgrade.asp",
+		"/E/web/dongtaiguangli/footer.asp",
+		"/E/web/dongtaiguangli/1fs.asp",
+		"/E/web/dongtaiguangli/config.asp",
+		"/F/update.asp",
+		"/E/web/dongtaiguangli/NFDT.mdb",
+		"/E/web/dongtaiguangli/动态报告平台.sublime-project",
+		"/E/web/dongtaiguangli/zs1.asp",
+		"/E/web/dongtaiguangli/css/NFDT.css",
+		"/E/web/dongtaiguangli/chore.asp",
+		"/E/web/dongtaiguangli/update.asp",
+		"/C/Users/lenovo/AppData/Local/Temp/scp50949/volume2/web/gate.php",
+		"/C/Users/lenovo/Desktop/gate.php",
+		"/C/Users/lenovo/AppData/Local/Temp/scp37017/volume2/web/gate2.php",
+		"/C/Users/lenovo/AppData/Local/Temp/scp38536/volume2/web/gate.php",
+		"/C/Users/lenovo/AppData/Local/Temp/scp01368/usr/share/hassio/homeassistant/switch.yaml",
+		"/C/Users/lenovo/AppData/Local/Temp/scp42936/usr/share/hassio/homeassistant/custom_components/media_player/dlna.py",
+		"/E/web/dongtaiguangli/3fs.asp",
+		"/E/web/dongtaiguangli/zs.asp",
+		"/E/web/dongtaiguangli/css/NFDT1.css",
+		"/E/green/SublimeText3_ha/Sublime Text 3x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/lenovo/AppData/Local/Temp/scp54576/usr/share/hassio/homeassistant/configuration.yaml",
+		"/E/web/dongtaiguangli/css/printstyle.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"title",
+			"zhform",
+			"zszbz",
+			"form1",
+			"报告平台",
+			"制隔离所",
+			"人数动态维护平台",
+			"caption",
+			"<caption>",
+			"系统",
+			"left",
+			"size=\"25\" ",
+			"DGuangZhou",
+			"DZhiBan",
+			"DWeiZhong"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"zszbzf",
+			"登记表",
+			"制隔离戒毒所",
+			"动态报告平台",
+			"div",
+			"span",
+			"<caption class=\"biaoti\">",
+			"平台",
+			"",
+			"DaGuangZhou",
+			"DaZhiBan",
+			"DaWeiZhong"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "update1.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								798,
+								798
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/lenovo/AppData/Local/Temp/scp13088/volume2/web/phpipam/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 357,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/NFDT.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1227,
+								1227
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "chore.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								200
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "zs1.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								200
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "4fs.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								406,
+								406
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GBK",
+							"revert_to_scratch": true,
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 828.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "css/NFDT1.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2343,
+								2343
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "update.asp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2938,
+								2955
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/ASP/HTML-ASP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "动态报告平台.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"E:\\web\\dongtaiguangli\\动态报告平台.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

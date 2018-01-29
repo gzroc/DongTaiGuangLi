@@ -1,0 +1,54 @@
+@media print{
+	.noprint{display: none;}
+}
+#printbutton{height: 30px;}
+.main{align:center; text-align: center;}
+a:link {
+ text-decoration: none;
+ color: #bbb;
+}
+a:visited {
+ text-decoration: none;
+  color: #bbb;
+
+}
+a:hover {
+color: #fff;
+text-decoration: none;
+}
+a:active { text-decoration: none; color: #eee;
+}
+body{background: #00A3F0;}
+.button1{  width:100%;/*设定宽度*/ height:32px;/*设置高度*/ line-height:32px; background: #eee; text-align: right; color: 0000ff;}
+.button2{  width:100%;/*设定宽度*/ height:32px;/*设置高度*/ line-height:32px; background: #eee; text-align: right; color: 0000ff;}
+#update{  width:100px;/*设定宽度*/ height:50px;/*设置高度*/ line-height:32px; background: #eee; }
+/*多行文本框样式*/
+#textare{width:100%; height: 120px; line-height: 30px; color: #0000ff;}
+.biaoti{ height: 80px; line-height: 80px; font-size: 36; color: #222; font-family:'宋体'; font-weight: bold; }
+/*分所标题*/
+.Fbiaoti{font-size: 18; color: #0000ff; font-family:'宋体'; font-weight: bold; }
+.suo{font-size: 18; font-family:'宋体'; text-align: left; border: 0px solid #fff; margin-bottom: 10px;}
+.neirong{font-size: 24; color: #fff; font-family:'宋体'; background: #000000; border: 2px solid #fff;}
+.zong{font-size: 36; color: #ff0000; font-family:'宋体';}
+.lastupdate{ margin:0 auto; text-align: right; color: #333;  font-size: 12px; padding-right: 10px;}
+#countrs{font-weight: bold;}
+#footer{text-align:center; font-size: 12; color:#68CEFF;}
+table{width:1024px; text-align:center; margin: auto; background: #fff; border: 1px solid;}
+#table1{width:1024px; text-align:center; margin: auto; background: #ccc; border: 1px solid;}
+#table1 td{width: 100;}
+caption{color: #fff; font-size: 20;  font-weight: bold;}
+.th2{width: 220;height: 30px; background: #ff0000; color: #fff;}
+td{width:120px; background: #ccc;}
+hr{margin:10px;}
+/*chore页面样式*/
+#header{width: 1024px; margin:0 auto;}
+.bimg{float: left;}
+/*分所填写页面样式*/
+.sili{text-align: left; padding:10 10px; font-size: 14px; color:#333;}
+.zszbzf{color: #0000ff; font-size: 20px;}
+/*总所页面样式*/
+.shujv{color: #0000ff;}
+.dt{color: #ff0000; margin-right: 20px;}
+.baogaoren{margin-left: 20px; color: #ccc;}
+/*分所页面样式*/
+.Noupdate{font-size: 12px; font-family: '宋体'; color: red;

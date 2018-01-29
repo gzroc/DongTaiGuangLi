@@ -1,0 +1,61 @@
+@media print{
+	.noprint{display: none;}
+}
+#printbutton{height: 30px;}
+.main{align:center; text-align: center;}
+a:link {
+ text-decoration: none;
+ color: #bbb;
+}
+a:visited {
+ text-decoration: none;
+  color: #bbb;
+
+}
+a:hover {
+color: #fff;
+text-decoration: none;
+}
+a:active { text-decoration: none; color: #eee;
+}
+body{background: #00A3F0;}
+.button1{  width:150px;/*设定宽度*/ height:32px;/*设置高度*/ line-height:32px; background: #eee; text-align: right; color: 0000ff;}
+.button2{  width:360px;/*设定宽度*/ height:32px;/*设置高度*/ line-height:32px; background: #eee; text-align: right; color: 0000ff;}
+.button3{  width:60px;/*设定宽度*/ height:25px;/*设置高度*/ line-height:25px; background: #eee; text-align: right; color: 0000ff;}
+.button4{  width:120px;/*设定宽度*/ height:25px;/*设置高度*/ line-height:25px; background: #eee; text-align: right; color: 0000ff;}
+#update{  width:100px;/*设定宽度*/ height:50px;/*设置高度*/ line-height:32px; background: #eee; }
+/*多行文本框样式*/
+#textare{width:100%; height: 120px; line-height: 30px; color: #0000ff;}
+.biaoti{ height: 80px; line-height: 80px; font-size: 36; color: #222; font-family:'宋体'; font-weight: bold; }
+/*分所标题*/
+.Fbiaoti{font-size: 18; color: #0000ff; font-family:'宋体'; font-weight: bold; }
+.suo{font-size: 18; font-family:'宋体'; text-align: left; border: 0px solid #fff; margin-bottom: 10px;}
+.neirong{font-size: 24; color: #fff; font-family:'宋体'; background: #000000; border: 2px solid #fff;}
+.zong{font-size: 36; color: #fff; font-family:'宋体';}
+.lastupdate{ width:1024px; margin:0 auto; text-align: right; color: #eee; font-style: italic; font-size: 14px; padding-right: 10px;}
+#countrs{font-size: 24; font-weight: bold;}
+#footer{text-align:center; font-size: 12; color:#68CEFF;}
+table{width:1024px; text-align:center; margin: auto; background: #ccc; border: 1px solid #000;}
+#table1{width:1024px; text-align:center; margin: auto; background: #ccc; border: 1px solid;}
+caption{color: #fff; font-size: 20; margin-top: 20px; background: #ff0000; font-weight: bold;}
+th{height: 40px; background: #f3bc66; color: #000;}
+td{width:150px; text-align: center; border: 1px solid #000; padding: 4px;}
+hr{margin:10px;}
+/*chore页面样式*/
+#header{width: 1024px; margin:0 auto;}
+.bimg{float: left;}
+/*分所填写页面样式*/
+.sili{text-align: left; padding-left: 20px; font-size: 14px; color:#ccc;}
+/*总所页面样式*/
+#timeL{font-size: 40px; font-family: 'Arial Black'; color:#333;}
+.shujv{color: #0000ff;}
+.dt{color: blue; margin-right: 20px; text-align: left; font-size: 12; }
+.baogaoren{color: grey; font-size: 13px;  float: right;}
+.zszbz{color: #0000ff; font-size: 20px; }
+/*指挥中心页面样式*/
+#zhform{margin-top: 10px;}
+#textare1{width:100%; height: 50px; line-height: 25px; color: #0000ff;}
+#update1{height: 50px; line-height: 25px; color: #0000ff;}
+.zszb{ display: block; float: left; font-size: 12; font-family:'宋体'; text-align: left; border: 0px solid #fff; margin-bottom: 10px;}
+/*通用样式*/
+.Noupdate{font-size: 12px; font-family: '宋体'; color: red;
